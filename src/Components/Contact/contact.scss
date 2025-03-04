@@ -1,4 +1,7 @@
-@import '../../app.scss';
+// @import '../../app.scss';
+@use '../../app.scss' as *;
+
+
 
 .contact {
     max-width: 1366px;
