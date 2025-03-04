@@ -1,5 +1,6 @@
 import "./navbar.scss";
 import fb from "../../assets/fb.png";
+import github from "../../assets/github.png";
 // import github from "../../assets/social.png";
 import linkedin from "../../assets/linkedin.png";
 import { motion } from "framer-motion";
@@ -25,7 +26,7 @@ const Navbar = () => {
           </a>
 
           <a href="https://github.com/Sumonahmed69" target="_blank">
-            <img className="img" src={'/src/assets/github.png'} alt="" />
+            <img className="img" src={github} alt="" />
           </a>
           <a href="https://www.linkedin.com/in/sumon-ahmed69/" target="_blank">
             <img className="img" src={linkedin} alt="" />
