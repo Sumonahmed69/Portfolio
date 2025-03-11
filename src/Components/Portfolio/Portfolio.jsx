@@ -7,31 +7,39 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "react Commerce",
-    img: "https://themefisher.com/blog-thumb/reactjs-website-templates.webp",
+    title: "Beep - eCommerce Web Application",
+    img: "https://i.ibb.co.com/cXQZ7dtM/Screenshot-2025-03-05-002403.png",
     discription:
-      "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatum molestias rerum laboriosam accusantium fuga, officia dolor quas tempora repellendus!",
+      "Beep is a full-stack eCommerce platform designed for a seamless shopping experience across all devices. It features a Backend, Frontend, and Admin Panel, allowing users to create accounts, browse products, and make secure purchases via Cash on Delivery (COD) or Stripe. The platform is fully responsive, ensuring optimal performance on mobile, tablet, and large screens",
+    demoLink: "https://beep-frontend.vercel.app",
+    gitLink: "https://github.com/Sumonahmed69/Beep-ecommerce" 
   },
   {
     id: 2,
-    title: "next.js Commerce",
-    img: "https://themefisher.com/blog/startp-react.webp",
+    title: "Dream Lounge Restaurants",
+    img: "https://i.ibb.co.com/x8DWKD8S/Screenshot-2025-03-05-002455.png",
     discription:
-      "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatum molestias rerum laboriosam accusantium fuga, officia dolor quas tempora repellendus!",
+      "Dream Lounge Restaurant is a full-stack, fully responsive web application designed to provide a seamless food ordering experience across mobile, tablet, and large screens. Users can create an account, log in, browse the menu, and place orders securely using Stripe for payments. The project features a dynamic and interactive UI, efficient state management, and a secure backend.",
+    demoLink: "https://dream-lounge-restaurant.web.app",
+    gitLink: "https://github.com/Sumonahmed69/Dream-lounge-restaurant-client" 
   },
   {
     id: 3,
-    title: "MongoDB Commerce",
-    img: "https://reactjsexample.com/content/images/2022/07/Code-2022-01-40-25.jpg",
+    title: "Hotel Advisors - Room Rental Website",
+    img: "https://i.ibb.co.com/DPgkgXKm/Screenshot-2025-03-12-010308.png",
     discription:
-      "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatum molestias rerum laboriosam accusantium fuga, officia dolor quas tempora repellendus!",
+      "Hotel Advisors is a Room Rental Website, similar to Airbnb, designed to offer a seamless booking experience for guests and property management features for hosts. It also includes an admin dashboard for managing users and monitoring platform activity",
+    demoLink: "https://hotel-advisors-ibt1.vercel.app/",
+    gitLink: "https://github.com/Sumonahmed69/Hotel-Advisors" 
   },
   {
     id: 4,
-    title: "Node.js Commerce",
-    img: "https://www.codavilla.com/static/de9390c05c1ad05c2577bdec791fe375/ee604/img-2.png",
+    title: "Gadget Shop - eCommerce Web Application",
+    img: "https://i.ibb.co.com/pjhSbzxp/Screenshot-2025-03-11-025052.png",
     discription:
-      "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatum molestias rerum laboriosam accusantium fuga, officia dolor quas tempora repellendus!",
+      " Gadget Shop is a full-stack eCommerce platform built with Next.js, offering a seamless and responsive shopping experience. It includes a user-friendly storefront, a seller dashboard, and secure authentication. Users can browse products, manage orders, and purchase via Cash on Delivery (COD).",
+    demoLink: "https://gadget-shop-psi.vercel.app/",
+    gitLink: "https://github.com/Sumonahmed69/Gadget-Shop" 
   },
 ];
 
@@ -46,7 +54,7 @@ const Single = ({ item }) => {
 
   //
   return (
-    <section >
+    <section>
       <div className="container">
         <div className="wrapper">
           <div className="imgContainer" ref={ref}>
@@ -56,7 +64,17 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.discription}</p>
-            <button>See Demo</button>
+
+          
+
+            <div className="git">
+              <a className="git-demo" href={item.demoLink} target="_blank">
+                <button>Preview</button>
+              </a>
+              <a className="git-link" href={item.gitLink} target="_blank">
+                <button>GitHub</button>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

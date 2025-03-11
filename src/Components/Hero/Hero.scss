@@ -20,6 +20,8 @@
             flex-direction: column;
             justify-content: center;
             gap: 40px;
+            position: relative;
+            z-index: 10; // Ensure it's above other elements
 
             @include mobile {
                 width: 100%;
@@ -45,6 +47,8 @@
             }
 
             .buttons {
+                position: relative;
+                z-index: 20;
                 button {
                     padding: 20px;
                     border: 1px solid white;
