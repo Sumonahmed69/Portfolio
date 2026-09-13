@@ -1,7 +1,6 @@
 
 
 html {
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
@@ -23,10 +22,21 @@ a {
     color: inherit;
 }
 
+// Visually hides an element while keeping it available to screen readers.
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 section {
     height: 100vh;
-    // scroll-snap-align: center;
-
 }
 
 

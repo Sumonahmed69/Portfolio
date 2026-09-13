@@ -1,4 +1,3 @@
-// @import '../../app.scss';
 @use '../../app.scss' as *;
 
 
@@ -91,10 +90,19 @@
                 border-radius: 10px;
                 cursor: pointer;
 
+                &:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
+
                 @include mobile {
 
                     padding: 10px;
                 }
+            }
+
+            .formStatus {
+                min-height: 20px;
             }
 
         }

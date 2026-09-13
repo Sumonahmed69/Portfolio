@@ -12,7 +12,7 @@ const textVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      duraction: 30,
+      duration: 1,
       staggerChildren: 0.2,
     },
   },
@@ -54,16 +54,18 @@ const Hero = () => {
           </motion.h2>
           <motion.h1 variants={textVariants}>Web Developer</motion.h1>
           <motion.div className="buttons" variants={textVariants}>
-            <motion.button id="Portfolio" variants={textVariants}>
-              See the Latest Works 
-            </motion.button>
+            <motion.a className="btn" href="#Portfolio" variants={textVariants}>
+              See the Latest Works
+            </motion.a>
 
             <motion.a
-              className="git-link"
+              className="btn cv-link"
               href="https://drive.google.com/file/d/1isWuo9jJa1mmwYWRU-XDEuQhDBH9ixRk/view?usp=sharing"
               target="_blank"
+              rel="noopener noreferrer"
+              variants={textVariants}
             >
-              <button>Contact Me</button>
+              Download CV
             </motion.a>
           </motion.div>
 
@@ -80,11 +82,12 @@ const Hero = () => {
         variants={sliderVariants}
         initial="initial"
         animate="animate"
+        aria-hidden="true"
       >
         I am MERN Stack Web Developer .
       </motion.div>
       <div className="imgContainer">
-        <img src={hero} alt="" />
+        <img src={hero} alt="Portrait of Md Sumon, web developer" />
       </div>
     </div>
   );

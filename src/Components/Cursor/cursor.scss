@@ -1,4 +1,3 @@
-// @import '../../app.scss';
 @use '../../app.scss' as *;
 
 
@@ -13,6 +12,7 @@
     border: 1px solid white;
     position: fixed;
     z-index: 100;
+    pointer-events: none;
 
 
     

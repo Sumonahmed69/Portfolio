@@ -1,5 +1,4 @@
 
-// @import '../../app.scss';
 @use '../../app.scss' as *;
 .hero {
     height: calc(100vh - 100px);
@@ -34,7 +33,7 @@
 
             h2 {
                 font-size: 30px;
-                color: rebeccapurple;
+                color: #b48cff;
                 letter-spacing: 5px;
             }
 
@@ -49,7 +48,10 @@
             .buttons {
                 position: relative;
                 z-index: 20;
-                button {
+                display: flex;
+
+                .btn {
+                    display: inline-block;
                     padding: 20px;
                     border: 1px solid white;
                     border-radius: 10px;
