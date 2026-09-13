@@ -14,7 +14,7 @@ const variants = {
       opacity: 1,
       y: 0,
       transition: {
-        duraction: 1,
+        duration: 1,
         staggerChildren: 0.2,
       },
     },
@@ -50,7 +50,7 @@ const About = () => {
             visually appealing but also fully accessible to all users,
             regardless of ability.
           </p>
-          <p>"Outside of work, I love climbing, reading, bike riding, and spending time with friends. I’m also on a mission to track down every last waterfall in Bandarban—no matter how hidden. You’ll often find me exploring the trails of Bandarban Hill 🏞️"</p>
+          <p>&ldquo;Outside of work, I love climbing, reading, bike riding, and spending time with friends. I&rsquo;m also on a mission to track down every last waterfall in Bandarban—no matter how hidden. You&rsquo;ll often find me exploring the trails of Bandarban Hill 🏞️&rdquo;</p>
         </motion.div>
       </div>
     </motion.div>

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useRef } from "react";
+import PropTypes from "prop-types";
 import "./parallax.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -42,6 +42,10 @@ const Parallax = ({ type }) => {
       <motion.div style={{ x: yBg }} className="stars"></motion.div>
     </div>
   );
+};
+
+Parallax.propTypes = {
+  type: PropTypes.oneOf(["services", "portfolio"]).isRequired,
 };
 
 export default Parallax;

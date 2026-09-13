@@ -27,12 +27,13 @@ function App() {
       </section>
       <section id="Portfolio">
         <Portfolio></Portfolio>
-        <section id="Contact">
-          <Contact></Contact>
-          <section  id="About"><About></About></section>
-        </section>
       </section>
-   
+      <section id="Contact">
+        <Contact></Contact>
+      </section>
+      <section id="About">
+        <About></About>
+      </section>
     </div>
   );
 }

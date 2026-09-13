@@ -12,31 +12,35 @@ const variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duraction: 0.5,
+      duration: 0.5,
       staggerChildren: 0.2,
     },
   },
 };
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const formRef = useRef();
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [status, setStatus] = useState(null); // null | "sending" | "success" | "error"
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setStatus("sending");
 
     emailjs
-      .sendForm("service_zak21nq", "template_q6ce00o", formRef.current, {
-        publicKey: "ZlDylT6uGcX2a_vWS",
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
+        publicKey: EMAILJS_PUBLIC_KEY,
       })
       .then(
         () => {
-          setSuccess(true);
+          setStatus("success");
+          formRef.current.reset();
         },
-        (error) => {
-          setError(true);
-          console.log("FAILED...", error.text);
+        () => {
+          setStatus("error");
         }
       );
   };
@@ -65,12 +69,48 @@ const Contact = () => {
       </motion.div>
       <div className="formContainer">
         <motion.form onSubmit={sendEmail} ref={formRef}>
-          <input type="text" required placeholder="Name" name="name" />
-          <input type="email" required placeholder="Email" name="email" />
-          <textarea rows={8} placeholder="Message" name="message" />
-          <button>Send</button>
-          {error && "Error"}
-          {success && "Success"}
+          <label htmlFor="contact-name" className="visually-hidden">
+            Name
+          </label>
+          <input
+            id="contact-name"
+            type="text"
+            required
+            placeholder="Name"
+            name="name"
+          />
+
+          <label htmlFor="contact-email" className="visually-hidden">
+            Email
+          </label>
+          <input
+            id="contact-email"
+            type="email"
+            required
+            placeholder="Email"
+            name="email"
+          />
+
+          <label htmlFor="contact-message" className="visually-hidden">
+            Message
+          </label>
+          <textarea
+            id="contact-message"
+            rows={8}
+            placeholder="Message"
+            name="message"
+            required
+          />
+
+          <button type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending..." : "Send"}
+          </button>
+
+          <p className="formStatus" aria-live="polite">
+            {status === "error" &&
+              "Something went wrong. Please try again."}
+            {status === "success" && "Message sent successfully!"}
+          </p>
         </motion.form>
       </div>
     </motion.div>

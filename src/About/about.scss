@@ -1,5 +1,4 @@
 @use '../app.scss' as *;
-// @import '../app.scss';
 
 .about {
     max-width: 1366px;
@@ -59,30 +58,6 @@
             gap: 20px;
             color: lightgray;
             padding: 10px;
-
-            input,
-            textarea {
-                padding: 20px;
-                background-color: transparent;
-                border: 1px solid white;
-                color: white;
-
-                @include mobile {
-                    padding: 10px;
-                }
-            }
-
-            button {
-                padding: 20px;
-                border: none;
-                background-color: orange;
-                border-radius: 10px;
-                cursor: pointer;
-
-                @include mobile {
-                    padding: 10px;
-                }
-            }
         }
     }
 }
